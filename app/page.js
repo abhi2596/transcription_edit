@@ -19,7 +19,7 @@ export default function Home() {
         const arrayBuffer = reader.result;
         const baseUrl = 'https://api.assemblyai.com/v2';
         const headers = {
-          authorization: process.env.NEXT_PUBLIC_assembly_api_key
+          authorization: document.getElementById("key").value
         };
 
         // Upload audio file
@@ -59,6 +59,13 @@ export default function Home() {
       </div>
       <div className="mb-4">
         <input type="file" id="fileUpload" name="fileUpload" accept="audio/*" className="hidden" onChange={handleFileChange} />
+        <input
+          type="password"
+          id="key"
+          name="api_key"
+          placeholder="Enter Assembly AI Key"
+          className="border border-gray-300 p-2 w-full"
+        />
         <button
           className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
           type="button"
