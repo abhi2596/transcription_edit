@@ -18,9 +18,8 @@ export default function Home() {
       reader.onload = async function() {
         const arrayBuffer = reader.result;
         const baseUrl = 'https://api.assemblyai.com/v2';
-        console.log(process.env.assembly_api_key);
         const headers = {
-          authorization: process.env.assesmbly_api_key
+          authorization: process.env.assembly_api_key
         };
 
         // Upload audio file
