@@ -20,8 +20,7 @@ export default function Home() {
         const baseUrl = 'https://api.assemblyai.com/v2';
         console.log(process.env.assesmbly_api_key);
         const headers = {
-          authorization: process.env.assesmbly_api_key,
-          'content-type': 'application/octet-stream'
+          authorization: process.env.assesmbly_api_key
         };
 
         // Upload audio file
