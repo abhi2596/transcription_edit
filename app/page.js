@@ -18,6 +18,7 @@ export default function Home() {
       reader.onload = async function() {
         const arrayBuffer = reader.result;
         const baseUrl = 'https://api.assemblyai.com/v2';
+        console.log(process.env.assesmbly_api_key);
         const headers = {
           authorization: process.env.assesmbly_api_key,
           'content-type': 'application/octet-stream'
