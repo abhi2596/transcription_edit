@@ -19,9 +19,7 @@ export default function Button() {
 
             const response = await axios.post('/api/transcribe', formData,
                 {
-                    headers: {
-                        'Content-Type': 'multipart/form-data',
-                      },
+                    ...formData.getHeaders(),
                 }
             );
             const transcriptText = response.data.transcript;
