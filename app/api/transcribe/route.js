@@ -2,6 +2,15 @@ import axios from 'axios';
 import { NextResponse } from "next/server";
 import clsx from 'clsx';
 
+
+export const config = {
+    api: {
+      bodyParser: {
+        sizeLimit: '50mb', // Set desired limit
+      },
+    },
+};
+
 export async function POST(req) {
     const baseUrl = 'https://api.assemblyai.com/v2';
 
@@ -62,13 +71,13 @@ export async function POST(req) {
             }
             if (word.end/1000 <= interval_time){
                 if(word.confidence <= 0.3){
-                    classname = clsx("text-slate-300");
+                    classname = clsx("text-red-300");
                 }
                 else if ((word.confidence > 0.3) && (word.confidence <= 0.6)){
-                    classname = clsx("text-slate-600");
+                    classname = clsx("text-red-600");
                 }
                 else{
-                    classname = clsx("text-slate-950");
+                    classname = clsx("text-red-950");
                 }
                 subtext += `<span class="${classname}"> ${word.text} </span>`;
                 end_time = word.end;
