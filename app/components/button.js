@@ -15,11 +15,11 @@ export default function Button() {
         const file = event.target.files[0];
         if (file) {
             const formData = new FormData();
-            formData.append('file', file);
+            formData.append('files', file);
 
             const response = await axios.post('/api/transcribe', formData,
                 {
-                    ...formData.getHeaders(),
+                     'Content-Type': 'multipart/form-data'
                 }
             );
             const transcriptText = response.data.transcript;
