@@ -3,13 +3,6 @@ import { NextResponse } from "next/server";
 import clsx from 'clsx';
 
 
-export const config = {
-    api: {
-      bodyParser: {
-        sizeLimit: '50mb', // Set desired limit
-      },
-    },
-};
 
 export async function POST(req) {
     const baseUrl = 'https://api.assemblyai.com/v2';
