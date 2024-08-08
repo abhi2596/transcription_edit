@@ -95,13 +95,4 @@ export async function POST(req) {
         await new Promise((resolve) => setTimeout(resolve, 3000))
     }
     }
-}      
-
-
-export const config = {
-    api: {
-      bodyParser: {
-        sizeLimit: '10mb',
-      },
-    },
-  }
+}
